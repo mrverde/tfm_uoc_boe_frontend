@@ -1,0 +1,8 @@
+{
+    "firstParagraph": "Hello Vite + React!",
+    "buttonText": "count is:",
+    "secondParagraph": "Edit App.jsx and save to test HMR updates.",
+    "linkText": "Learn React",
+    "linkText2": "Vite Docs",
+    "changeLangBtn": "Change language"
+}
