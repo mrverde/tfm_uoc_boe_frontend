@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logo from './logo.svg'
+import logo from './assets/logo.svg'
 import './App.scss'
 import "./i18n";
 
@@ -20,8 +20,6 @@ const App = () => {
     i18n.changeLanguage("en")
     setLang("en")
   }
-
-  console.log(useTranslation)
 
   return (
     <div className="app">
