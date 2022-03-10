@@ -5,7 +5,9 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "test": "cypress run",
+        "cy:open": "cypress open"
     },
     "dependencies": {
         "@vitejs/plugin-react": "^1.2.0",
@@ -21,6 +23,10 @@
     "devDependencies": {
         "cypress": "^9.5.1",
         "cypress-cucumber-preprocessor": "^4.3.1",
+        "cypress-xpath": "^1.6.2",
         "sass": "^1.49.9"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
     }
 }
