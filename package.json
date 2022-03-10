@@ -7,16 +7,19 @@
         "build": "vite build",
         "preview": "vite preview",
         "test": "cypress run",
+        "test:css": "npx stylelint 'src/**/*.scss'",
         "cy:open": "cypress open"
     },
     "dependencies": {
         "@vitejs/plugin-react": "^1.2.0",
+        "http-server": "^14.1.0",
         "i18next": "^21.6.14",
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "react-i18next": "^11.15.6",
         "react-router-dom": "^6.2.2",
         "rollup-plugin-visualizer": "^5.6.0",
+        "stylelint-scss": "^4.1.0",
         "vite": "^2.8.0",
         "vite-plugin-environment": "^1.1.0"
     },
@@ -24,7 +27,11 @@
         "cypress": "^9.5.1",
         "cypress-cucumber-preprocessor": "^4.3.1",
         "cypress-xpath": "^1.6.2",
-        "sass": "^1.49.9"
+        "sass": "^1.49.9",
+        "stylelint": "^14.5.3",
+        "stylelint-config-sass-guidelines": "^9.0.1",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-config-standard-scss": "^3.0.0"
     },
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true
