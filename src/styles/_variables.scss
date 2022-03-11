@@ -1,0 +1,14 @@
+@use "sass:color";
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+$primary-font: -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+  "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$secondary-font: anton, sans-serif;
+$mq-min-width: 500px;
+$mq-tablet-width: 768px;
+$mq-maxitablet-width: 900px;
+$bg-color: #ebedee;
+$color-primary: #534ab7;
+$color-secondary: #fff;
+$color-secondary-hover: color.adjust($color-secondary, $blackness: 50%);

@@ -1,12 +1,31 @@
 {
   "name": "boilerplate_frontend_react",
   "private": false,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Boilerplate built with react, vite, sass, cypress, cucumber, eslint & stylelint",
+  "web": "dist/index.html",
+  "targets": {
+    "web": {
+      "context": "browser",
+      "publicUrl": "./",
+      "engines": {
+        "browsers": "last 2 versions, > 0.5%, not dead"
+      }
+    }
+  },
+  "author": {
+    "name": "Jose D. Mateo"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrverde/boilerplate_frontend_react.git"
+  },
   "scripts": {
     "dev": "npm-run-all clean vite:serve",
     "build": "npm-run-all clean lint test:css vite:build copy",
     "preview": "npm-run-all clean vite:preview",
-    "test": "npm-run-all clean lint test:css cy:run",
+    "test": "npm-run-all lint test:css cy:run",
     "test:css": "npx stylelint 'src/**/*.scss'",
     "vite:serve": "vite",
     "vite:build": "vite build",
@@ -16,7 +35,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "clean": "rimraf dist",
-    "copy": "cp src/_redirects dist"
+    "copy": "cp src/assets/_redirects dist"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^1.2.0",
