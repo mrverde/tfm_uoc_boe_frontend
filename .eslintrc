@@ -1,0 +1,30 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:react/recommended",
+        "plugin:cypress/recommended"
+    ],
+    "plugins": ["prettier", "react"],
+    "rules": {
+        "prettier/prettier": "error",
+        "react/display-name": "off"
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "settings": {
+        "react": {
+            "version": "17.0.2"
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+}

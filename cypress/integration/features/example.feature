@@ -1,4 +1,4 @@
-Feature: Google Main Page
+Feature: Example Page
 
   Scenario: Visit homepage
     Given I open "http://localhost:3000/" page
