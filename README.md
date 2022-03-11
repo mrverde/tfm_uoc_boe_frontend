@@ -1,8 +1,8 @@
 # Boilerplate frontend react
 
-This is a basic boilerplate which provides a basic frontend starter pack.
+This is a basic boilerplate which provides a frontend starter pack.
 
-It's based in react and it's based and built with the following technologies:
+It's based in react and it's build with the following technologies:
 
 * React (includes react's router)
 * i18next (translations)
@@ -14,7 +14,7 @@ It's based in react and it's based and built with the following technologies:
 
 ## How to use the boilerplate
 
-At first, download the bundle and install the packages with
+At first, download the bundle and install the packages with the command:
 
 ### Install dependencies
 ```{bash}
