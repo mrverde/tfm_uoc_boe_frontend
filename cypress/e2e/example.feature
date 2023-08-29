@@ -8,4 +8,3 @@ Feature: Example Page
     And I see "Aprende React" "text"
     And I see "Documentación de Vite" "text"
     And I see "Cambia el idioma" "button"
-

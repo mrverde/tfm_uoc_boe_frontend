@@ -4,9 +4,9 @@
     "stylelint-scss"
   ],
   "rules": {
-    "indentation": 2,
     "color-named": "never",
     "at-rule-no-unknown": null,
+    "import-notation": null,
     "scss/at-rule-no-unknown": true,
     "rule-empty-line-before": ["always-multi-line",
       { "except": "inside-block" }
