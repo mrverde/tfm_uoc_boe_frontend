@@ -1,8 +1,11 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
 import logo from "./assets/logo.svg";
 import "./App.scss";
 import "./i18n";
+
+import PageTableBoe from "./pages/PageTableBoe/PageTableBoe";
 
 import { useTranslation } from "react-i18next";
 
@@ -22,8 +25,10 @@ const App = () => {
     setLang("en");
   };
 
+
   return (
     <div className="app">
+      <PageTableBoe />
       <header className="app-header">
         <img src={logo} className="app-logo" alt="logo" />
         <p>{t("firstParagraph")}</p>
