@@ -1,0 +1,23 @@
+@import "../../../styles/main.scss";
+
+.ls-ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.li-block {
+    margin: 0px 10px;
+}
+
+
+.li-block a:visited, .li-block a {
+    color: black;
+}
+
+// .li-block a {
+//     color: black;
+// }
+
+.li-block:hover, .li-block a:hover {
+    color: gray;
+}

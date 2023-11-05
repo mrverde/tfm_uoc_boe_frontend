@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import MaterialTable from "@material-table/core";
 import ExportCsv from "@material-table/exporters/csv";
 import ExportPdf from "@material-table/exporters/pdf";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
@@ -7,7 +6,8 @@ import HtmlOutlinedIcon from "@mui/icons-material/HtmlOutlined";
 
 import { getBoe } from "../../api/boe";
 
-import DetailBoePanel from "../../components/DetailBoePanel";
+import BoeActions from "../../components/TableColumns/BoeActions";
+import TableBoe from "../../components/TableBoe/TableBoe";
 
 import "./PageTableBoe.scss";
 
@@ -54,8 +54,6 @@ const PageTableBoe = () => {
     setData(dfProcessed);
   };
 
-  const lookup = { true: "Available", false: "Unavailable" };
-
   const columns = [
     {
       title: "Fecha",
@@ -75,32 +73,18 @@ const PageTableBoe = () => {
     {
       title: "Acciones",
       render: rowData => {
-        return (
-          <div>
-            <ul className="ls-ul">
-              <li>
-                <div className="li-block">
-                  <a
-                    href={`https://www.boe.es${rowData.itUrlPdf}`}
-                    target="_blank"
-                    rel="noreferrer">
-                    <PictureAsPdfOutlinedIcon />
-                  </a>
-                </div>
-              </li>
-              <li>
-                <div className="li-block">
-                  <a
-                    href={`https://www.boe.es${rowData.itUrlHtml}`}
-                    target="_blank"
-                    rel="noreferrer">
-                    <HtmlOutlinedIcon />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        );
+        const actionColumns = [
+          {
+            href: `https://www.boe.es${rowData.itUrlPdf}`,
+            icon: <PictureAsPdfOutlinedIcon />
+          },
+          {
+            href: `https://www.boe.es${rowData.itUrlHtml}`,
+            icon: <HtmlOutlinedIcon />
+          }
+        ];
+
+        return <BoeActions iconsList={actionColumns} />;
       }
     }
   ];
@@ -123,17 +107,12 @@ const PageTableBoe = () => {
 
   return (
     <>
-      <div className="tableboe">
-        <MaterialTable
-          title="Disposiciones y anuncios"
-          columns={columns}
-          data={data}
-          options={optionsTable}
-          detailPanel={({ rowData }) => {
-            return <DetailBoePanel data={rowData} />;
-          }}
-        />
-      </div>
+      <TableBoe
+        title={"Disposiciones y anuncios"}
+        columns={columns}
+        data={data}
+        options={optionsTable}
+      />
     </>
   );
 };
