@@ -1,5 +1,35 @@
 @import "../../styles/main.scss";
 
+.table-responsive {
+    overflow-x: auto;
+  }
+
+.table-responsive table {
+    white-space: nowrap;
+}
+
 .tableboe {
     margin: 20px 20px
+}
+
+.ls-ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.li-block {
+    margin: 0px 10px;
+}
+
+
+.li-block a:visited, .li-block a {
+    color: black;
+}
+
+.li-block a {
+    color: black;
+}
+
+.li-block:hover, .li-block a:hover {
+    color: gray;
 }
