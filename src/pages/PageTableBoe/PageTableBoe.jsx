@@ -3,6 +3,8 @@ import ExportCsv from "@material-table/exporters/csv";
 import ExportPdf from "@material-table/exporters/pdf";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import HtmlOutlinedIcon from "@mui/icons-material/HtmlOutlined";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 
 import { getBoe } from "../../api/boe";
 
@@ -12,14 +14,25 @@ import TableBoe from "../../components/TableBoe/TableBoe";
 import "./PageTableBoe.scss";
 
 const PageTableBoe = () => {
+  const [date, setDate] = useState(dayjs(new Date()));
   const [data, setData] = useState([]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [date]);
+
+  const zeroPad = (num, places) => String(num).padStart(places, "0");
+
+  const genDate = date => {
+    const day = zeroPad(date.date(), 2);
+    const month = zeroPad(date.month() + 1, 2);
+    const year = date.year();
+
+    return `${year}${month}${day}`;
+  };
 
   const getData = async () => {
-    const df = await getBoe("20231103");
+    const df = await getBoe(genDate(date));
 
     const dfProcessed = df.data.map(
       ([
@@ -107,6 +120,16 @@ const PageTableBoe = () => {
 
   return (
     <>
+      <div className="pagetableboe__dateselector">
+        <DatePicker
+          label="Controlled picker"
+          value={date}
+          onChange={newValue => {
+            setDate(newValue);
+            console.log(newValue);
+          }}
+        />
+      </div>
       <TableBoe
         title={"Disposiciones y anuncios"}
         columns={columns}

@@ -1,7 +1,9 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/react-in-jsx-scope */
 import { useState } from "react";
-import logo from "./assets/logo.svg";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import 'dayjs/locale/es';
 import "./App.scss";
 import "./i18n";
 
@@ -10,7 +12,6 @@ import PageTableBoe from "./pages/PageTableBoe/PageTableBoe";
 import { useTranslation } from "react-i18next";
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const [lang, setLang] = useState("es");
 
   const { t, i18n } = useTranslation();
@@ -28,37 +29,13 @@ const App = () => {
 
   return (
     <div className="app">
-      <PageTableBoe />
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p>{t("firstParagraph")}</p>
-        <p>
-          <button type="button" onClick={() => setCount(count => count + 1)}>
-            {t("buttonText")} {count}
-          </button>
-        </p>
-        <p>{t("secondParagraph")}</p>
-        <p>
-          <a
-            className="app-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">
-            {t("linkText")}
-          </a>
-          {" | "}
-          <a
-            className="app-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer">
-            {t("linkText2")}
-          </a>
-        </p>
+      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
+        {false &&
         <button onClick={lang === "es" ? changeToEnglish : changeToSpanish}>
           {t("changeLangBtn")}
-        </button>
-      </header>
+        </button>}
+      <PageTableBoe />
+      </LocalizationProvider>
     </div>
   );
 };

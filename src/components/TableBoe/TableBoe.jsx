@@ -29,8 +29,8 @@ const TableBoe = props => {
 
 TableBoe.propTypes = {
   title: PropTypes.string,
-  columns: PropTypes.object,
-  data: PropTypes.object,
+  columns: PropTypes.array,
+  data: PropTypes.array,
   options: PropTypes.object
 };
 
