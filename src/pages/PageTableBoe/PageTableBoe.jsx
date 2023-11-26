@@ -3,10 +3,12 @@ import ExportCsv from "@material-table/exporters/csv";
 import ExportPdf from "@material-table/exporters/pdf";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import HtmlOutlinedIcon from "@mui/icons-material/HtmlOutlined";
+import AssignmentReturnedIcon from "@mui/icons-material/AssignmentReturned";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import dayjs from "dayjs";
 
 import { getBoe } from "../../api/boe";
+import { checkResumeExists } from "../../api/storage";
 
 import BoeActions from "../../components/TableColumns/BoeActions";
 import TableBoe from "../../components/TableBoe/TableBoe";
@@ -94,9 +96,11 @@ const PageTableBoe = () => {
           {
             href: `https://www.boe.es${rowData.itUrlHtml}`,
             icon: <HtmlOutlinedIcon />
+          },
+          checkResumeExists("boeResumes", rowData.itId) && {
+            icon: <AssignmentReturnedIcon />
           }
         ];
-
         return <BoeActions iconsList={actionColumns} />;
       }
     }
@@ -126,7 +130,6 @@ const PageTableBoe = () => {
           value={date}
           onChange={newValue => {
             setDate(newValue);
-            console.log(newValue);
           }}
         />
       </div>

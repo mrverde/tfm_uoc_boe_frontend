@@ -12,10 +12,16 @@ const BoeActions = props => {
         {iconsList.map((el, idx) => {
           return (
             <li key={idx}>
-              <div className="li-block">
-                <a href={el.href} target="_blank" rel="noreferrer">
-                  {el.icon}
-                </a>
+              <div className="li-clicklable-block">
+                {el.href ? (
+                  <div className="li-block">
+                    <a href={el.href} target="_blank" rel="noreferrer">
+                      {el.icon}
+                    </a>
+                  </div>
+                ) : (
+                  <>{el.icon}</>
+                )}
               </div>
             </li>
           );

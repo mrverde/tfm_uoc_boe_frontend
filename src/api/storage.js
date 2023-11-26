@@ -18,4 +18,13 @@ const deleteResumesData = element => {
   localStorage.removeItem(element);
 };
 
-export { getResumesData, saveResumesData, deleteResumesData };
+const checkResumeExists = (element, boe) => {
+  return boe in getResumesData(element);
+};
+
+export {
+  getResumesData,
+  saveResumesData,
+  deleteResumesData,
+  checkResumeExists
+};
