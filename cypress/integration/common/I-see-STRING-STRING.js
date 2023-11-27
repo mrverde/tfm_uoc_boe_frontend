@@ -5,5 +5,7 @@ Then(`I see {string} {string}`, (element, type) => {
     cy.get("body").contains(element);
   } else if (type === "button") {
     cy.get("button").contains(element);
+  } else if (type === "table") {
+    cy.get("[data-cy=table]").contains(element)
   }
 });

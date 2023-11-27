@@ -19,7 +19,10 @@ const deleteResumesData = element => {
 };
 
 const checkResumeExists = (element, boe) => {
-  return boe in getResumesData(element);
+  if (typeof element === "object" && element !== null) {
+    return boe in getResumesData(element);
+  }
+  return false;
 };
 
 export {

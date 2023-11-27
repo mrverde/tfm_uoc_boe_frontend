@@ -8,11 +8,11 @@ import DetailBoePanel from "../../components/DetailBoePanel";
 import "./TableBoe.scss";
 
 const TableBoe = props => {
-  const { title, data, columns, options } = props;
+  const { title, data, columns, options, dataTestId } = props;
 
   return (
     <>
-      <div className="tableboe">
+      <div className="tableboe" data-testid={dataTestId} data-cy="table">
         <MaterialTable
           title={title}
           columns={columns}
@@ -31,7 +31,8 @@ TableBoe.propTypes = {
   title: PropTypes.string,
   columns: PropTypes.array,
   data: PropTypes.array,
-  options: PropTypes.object
+  options: PropTypes.object,
+  dataTestId: PropTypes.string
 };
 
 export default TableBoe;

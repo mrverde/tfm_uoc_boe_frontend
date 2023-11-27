@@ -138,6 +138,7 @@ const PageTableBoe = () => {
         columns={columns}
         data={data}
         options={optionsTable}
+        dataTestId="boe-table"
       />
     </>
   );

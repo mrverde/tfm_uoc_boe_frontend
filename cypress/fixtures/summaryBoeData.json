@@ -1,0 +1,30 @@
+[
+    [
+       "01/01/2999",
+       "1",
+       "I. Disposiciones generales",
+       "MINISTERIO PARA EL TESTEO",
+       "123456",
+       "Testeo",
+       "BOE-A-2999-00000",
+       "2999/00000",
+       "Caso 00000 para la resolución de 01 de enero de 2999 para el testeo",
+       "/boe/dias/2999/01/01/pdfs/BOE-A-2999-00000.pdf",
+       "/diario_boe/txt.php?id=BOE-A-2999-00000",
+       "/diario_boe/xml.php?id=BOE-A-2999-00000"
+    ],
+    [
+       "01/01/2999",
+       "1",
+       "I. Disposiciones generales",
+       "MINISTERIO PARA EL TESTEO",
+       "123456",
+       "Testeo",
+       "BOE-A-2999-99999",
+       "2999/99999",
+       "Caso 99999 para la resolución de 01 de enero de 2999 para el testeo",
+       "/boe/dias/2999/01/01/pdfs/BOE-A-2999-99999.pdf",
+       "/diario_boe/txt.php?id=BOE-A-2999-99999",
+       "/diario_boe/xml.php?id=BOE-A-2999-99999"
+    ]
+ ]
