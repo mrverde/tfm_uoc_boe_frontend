@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDebounce } from "@uidotdev/usehooks";
 import ExportCsv from "@material-table/exporters/csv";
 import ExportPdf from "@material-table/exporters/pdf";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
@@ -19,9 +20,11 @@ const PageTableBoe = () => {
   const [date, setDate] = useState(dayjs(new Date()));
   const [data, setData] = useState([]);
 
+  const debouncedDate = useDebounce(date, 500);
+
   useEffect(() => {
     getData();
-  }, [date]);
+  }, [debouncedDate]);
 
   const zeroPad = (num, places) => String(num).padStart(places, "0");
 
@@ -34,7 +37,7 @@ const PageTableBoe = () => {
   };
 
   const getData = async () => {
-    const df = await getBoe(genDate(date));
+    const df = await getBoe(genDate(debouncedDate));
 
     const dfProcessed = df.data.map(
       ([
@@ -124,9 +127,9 @@ const PageTableBoe = () => {
 
   return (
     <>
-      <div className="pagetableboe__dateselector">
+      <div className="pagetableboe__dateselector" data-cy="selector">
         <DatePicker
-          label="Controlled picker"
+          label="Fecha"
           value={date}
           onChange={newValue => {
             setDate(newValue);
