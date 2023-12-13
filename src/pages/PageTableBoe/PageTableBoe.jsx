@@ -127,7 +127,7 @@ const PageTableBoe = () => {
 
   return (
     <>
-      <div className="pagetableboe__dateselector" data-cy="selector">
+      <div className="pagetableboe-dateselector" data-cy="selector">
         <DatePicker
           label="Fecha"
           value={date}
