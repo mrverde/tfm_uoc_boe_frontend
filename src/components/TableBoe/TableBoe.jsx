@@ -10,6 +10,23 @@ import "./TableBoe.scss";
 const TableBoe = props => {
   const { title, data, columns, options, dataTestId } = props;
 
+  const localization = {
+    pagination: {
+      firstTooltip: "Primera página",
+      previousTooltip: "Página anterior",
+      nextTooltip: "Página siguiente",
+      lastTooltip: "Última página",
+      labelRowsPerPage: "Filas por página:",
+      labelRows: "Filas",
+      labelDisplayedRows: "{from}-{to} de {count}"
+    },
+    toolbar: {
+      exportTitle: "Exportar",
+      searchTooltip: "Buscar",
+      searchPlaceholder: "Buscar"
+    }
+  };
+
   return (
     <>
       <div className="tableboe" data-testid={dataTestId} data-cy="table">
@@ -18,6 +35,7 @@ const TableBoe = props => {
           columns={columns}
           data={data}
           options={options}
+          localization={localization}
           detailPanel={({ rowData }) => {
             return <DetailBoePanel data={rowData} />;
           }}
