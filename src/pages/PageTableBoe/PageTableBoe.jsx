@@ -5,8 +5,7 @@ import ExportPdf from "@material-table/exporters/pdf";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import HtmlOutlinedIcon from "@mui/icons-material/HtmlOutlined";
 import AssignmentReturnedIcon from "@mui/icons-material/AssignmentReturned";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
+import PropTypes from "prop-types";
 
 import { getBoe } from "../../api/boe";
 import { checkResumeExists } from "../../api/storage";
@@ -16,8 +15,9 @@ import TableBoe from "../../components/TableBoe/TableBoe";
 
 import "./PageTableBoe.scss";
 
-const PageTableBoe = () => {
-  const [date, setDate] = useState(dayjs(new Date()));
+const PageTableBoe = props => {
+  const { date } = props;
+
   const [data, setData] = useState([]);
 
   const debouncedDate = useDebounce(date, 500);
@@ -127,15 +127,6 @@ const PageTableBoe = () => {
 
   return (
     <>
-      <div className="pagetableboe-dateselector" data-cy="selector">
-        <DatePicker
-          label="Fecha"
-          value={date}
-          onChange={newValue => {
-            setDate(newValue);
-          }}
-        />
-      </div>
       <TableBoe
         title={"Disposiciones y anuncios"}
         columns={columns}
@@ -145,6 +136,10 @@ const PageTableBoe = () => {
       />
     </>
   );
+};
+
+PageTableBoe.propTypes = {
+  date: PropTypes.object
 };
 
 export default PageTableBoe;

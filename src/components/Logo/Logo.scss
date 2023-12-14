@@ -1,0 +1,15 @@
+@import "../../styles/main";
+
+.header-logo {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $color-secondary;
+  padding: 2px 10px;
+  color: $color-secondary;
+}
+
+.header-logo-text {
+  font-size: 2rem;
+  font-family: $secondary-font;
+  white-space: nowrap;
+}
