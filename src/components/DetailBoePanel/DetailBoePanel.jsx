@@ -58,7 +58,7 @@ const DetailBoePanel = props => {
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {`ID: ${data.itId}`}
         </Typography>
-        {resumeData?.resume ? (
+        {resumeData?.status === "ok" ? (
           <>
             <Box sx={{ maxWidth: "90%" }}>
               <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
@@ -73,15 +73,22 @@ const DetailBoePanel = props => {
             </Box>
           </>
         ) : (
-          <CardActions>
-            {loader ? (
-              <CircularProgress />
-            ) : (
-              <Button size="medium" onClick={generateChatGPTResumeOnClick}>
-                Generar Resumen con ChatGPT
-              </Button>
-            )}
-          </CardActions>
+          <>
+            <CardActions>
+              {loader ? (
+                <CircularProgress />
+              ) : (
+                <Button size="medium" onClick={generateChatGPTResumeOnClick}>
+                  Generar Resumen con ChatGPT
+                </Button>
+              )}
+            </CardActions>
+            <Box sx={{ maxWidth: "90%" }}>
+              <Typography variant="body2" sx={{ marginTop: "7px" }}>
+                {resumeData.resume}
+              </Typography>
+            </Box>
+          </>
         )}
       </CardContent>
     </Card>
