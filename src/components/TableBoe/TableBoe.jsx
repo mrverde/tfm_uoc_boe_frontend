@@ -11,6 +11,9 @@ const TableBoe = props => {
   const { title, data, columns, options, dataTestId } = props;
 
   const localization = {
+    body: {
+      emptyDataSourceMessage: "Sin datos"
+    },
     pagination: {
       firstTooltip: "Primera página",
       previousTooltip: "Página anterior",
