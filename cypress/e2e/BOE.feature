@@ -44,7 +44,7 @@ Feature: User can consult BOEs
       And I see "PictureAsPdfOutlined" "icon"
       And I count 2 "PictureAsPdfOutlined" "icon"
     Then I click in the "PictureAsPdfOutlined" "icon" 1
-      And I am at "https://www.boe.es/boe/dias/2999/01/01/pdfs/BOE-A-2999-00000.pdf" url
+      And I am at "https://www.boe.es/boe/dias/2999/01/01/pdfs/BOE-A-2024-666.pdf" url
 
 
   Scenario: User can visit the HTML version of a BOE document
@@ -53,7 +53,7 @@ Feature: User can consult BOEs
       And I see "HtmlOutlined" "icon"
       And I count 2 "HtmlOutlined" "icon"
     Then I click in the "HtmlOutlined" "icon" 1
-      And I am at "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2999-00000" url
+      And I am at "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-666" url
 
 
   Scenario: User can resume a BOE document with ChatGPT
